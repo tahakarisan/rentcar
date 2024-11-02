@@ -1,19 +1,13 @@
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Marka Adı</th>
-            <th>Model Yılı</th>
-            <th>Ücret</th>
-            <th>Açıklama</th>
-        </tr>
-    </thead>
-    <tr *ngFor="let car of cars">
-      <td>{{car.id}}</td>
-      <td>{{car.brandName}}</td>
-      <td>{{car.modelYear}}</td>
-      <td>{{car.dailyPrice}}</td>
-      <td>{{car.description}}</td>
-    </tr>
-</table>
+<div class="row">
+  <div *ngFor="let car of cars" class="col-md-4"><br> <!-- Burada 4, her satırda 3 kart göstermek için -->
+    <div class="card" style="width: 22rem; height: 30rem;">
+      <img  class="card-img-top" src="get"> <!-- Dikkat: src için [] kullanın -->
+      <div class="card-body"><br><br><br><br><br><br><br><br><br><br>
+        <h5 class="card-title">{{car.description}}</h5><br>
+        <p class="card-text"><b>Renk:</b> {{car.colorName}} <br> <b>Ücret:</b> {{car.dailyPrice}}</p>
+        <a href="#" class="btn btn-primary">Detaylara Git!</a>
+      </div>
+    </div>
+  </div>
+</div>

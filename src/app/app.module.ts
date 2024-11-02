@@ -3,10 +3,8 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CategoryComponent } from './components/category/category.component';
 import { CarComponent } from './components/car/car.component';
 import { BrandComponent } from './components/brand/brand.component';
-import { ColorComponent } from './components/color/color.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { UserComponent } from './components/user/user.component';
 import { CampaignComponent } from './components/campaign/campaign.component';
@@ -14,11 +12,11 @@ import { RoleComponent } from './components/role/role.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NaviComponent } from './components/navi/navi.component';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { ColorComponent } from './components/color/color.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CategoryComponent,
     CarComponent,
     BrandComponent,
     ColorComponent,
@@ -26,7 +24,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
     UserComponent,
     CampaignComponent,
     RoleComponent,
-    NaviComponent
+    NaviComponent,
   ],
   imports: [
     BrowserModule,
