@@ -1,6 +1,7 @@
 
 <ul class="list-group">
     <li 
+    (click)="setCurrentBrand(null)"
     [routerLink]="['']"
     [class]="getAllCurrentBrandClass()"
     >Tüm Markalar
@@ -13,4 +14,5 @@
     {{brand.brandName}}
     </li>
 </ul>
+<br>
 <h4 *ngIf="currentBrand">{{currentBrand.brandName}}</h4>

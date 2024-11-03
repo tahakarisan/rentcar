@@ -1,1 +1,17 @@
-<p>color works!</p>
+<ul class="list-group">
+        <li 
+        (click)="setCurrentColor(null)"
+        [routerLink]="['']"
+        [class]="getAllCurrentColorClass()">
+            Tüm Renkler
+        </li>
+    <li *ngFor="let color of colors" 
+    (click)="setCurrentColor(color)"
+    [routerLink]="['/Cars/Color/',color.id]"
+    [class]="getCurrentColorClass(color)">
+    {{color.colorName}}
+    </li>
+</ul>
+<br>
+<h4 *ngIf="currentColor">{{currentColor.colorName}}</h4>
+

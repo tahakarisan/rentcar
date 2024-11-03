@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class BrandComponent implements OnInit{
     
     brands:Brand[]=[]
-    currentBrand:Brand;
+    currentBrand:Brand|null=null;
     constructor(private brandService:BrandService){}
     ngOnInit(): void {
       this.getBrands();
@@ -23,7 +23,7 @@ export class BrandComponent implements OnInit{
         this.brands=response.data
       })
     }
-    setCurrentBrand(brand:Brand){
+    setCurrentBrand(brand:Brand|null){
       this.currentBrand=brand
     }
     getCurrentBrandClass(brand:Brand){
@@ -35,13 +35,11 @@ export class BrandComponent implements OnInit{
        }
     }
     getAllCurrentBrandClass(){
-      if(!this.currentBrand){
+      if(this.currentBrand==null){
        return "list-group-item active"
       }
       else{
        return "list-group-item"
       }
    }
-    
-    
 }
