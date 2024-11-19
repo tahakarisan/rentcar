@@ -8,8 +8,8 @@
 
 .carousel-container {
     position: relative;
-    width: 700px; /* Resmin genişliği */
-    height: 500px; /* Resmin yüksekliği */
+    width: 700px; 
+    height: 500px; 
     margin: auto;
     overflow: hidden;
     display: flex;
@@ -50,4 +50,9 @@
     font-size: 45px;
     background-color: gray;
     border-radius: 20px 20px 20px 20px;
+  }
+  
+  .car-property{
+    font-size: 18px;
+    
   }

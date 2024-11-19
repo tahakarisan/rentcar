@@ -5,6 +5,23 @@
     <button class="nav-button right">&#8250;</button>
   </div>
 </div>
+<br><br><br>
+<div>
+    <div class="car-property" *ngFor="let carDetail of carDetails">
+        <thead>
+            <ul class="list-group">
+                <li class="list-group-item" style="background-color: rgb(20, 92, 187); color: white;">
+                    Özellikleri
+                </li>
+            </ul>
+            <br>
+               <b>Markası: </b> {{carDetail.brandName}} <br> 
+               <b>Renk: </b> {{carDetail.colorName}} <br>
+               <b>Model Yılı: </b> {{carDetail.modelYear}} <br>
+               <b>Açıklama: </b>  {{carDetail.description}} <br>
+        </thead>
+    </div>
+</div>
 
 
 
