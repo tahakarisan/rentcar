@@ -1,11 +1,11 @@
 <ul class="list-group">
-        <li 
+        <li style="cursor: pointer;"
         (click)="setCurrentColor(null)"
         [routerLink]="['']"
         [class]="getAllCurrentColorClass()">
             Tüm Renkler
         </li>
-    <li *ngFor="let color of colors" 
+    <li style="cursor: pointer;" *ngFor="let color of colors" 
     (click)="setCurrentColor(color)"
     [routerLink]="['/Cars/Color/',color.id]"
     [class]="getCurrentColorClass(color)">

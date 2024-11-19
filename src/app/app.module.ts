@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NaviComponent } from './components/navi/navi.component';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { ColorComponent } from './components/color/color.component';
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ColorComponent } from './components/color/color.component';
     CampaignComponent,
     RoleComponent,
     NaviComponent,
+    CarDetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { Car } from '../models/car';
 import { ListResponseModel } from '../models/listResponseModel';
 import { CarImage } from '../models/carImage';
 import { Color } from '../models/color';
+import { CarDetail } from '../models/carDetail';
 @Injectable({
   providedIn: 'root'
 })
@@ -35,5 +36,9 @@ export class CarService {
   getCarImageByCarId(carId:number):Observable<ListResponseModel<CarImage>>{
     let path = this.url+"CarImages/GetByCarId?carId="+carId;
     return this.httpClient.get<ListResponseModel<CarImage>>(path);
+  }
+  getCarDetailByCarId(carId:number):Observable<ListResponseModel<CarDetail>>{
+    let path = this.url+"Cars/GetDetailByCarId?carId="+carId;
+    return this.httpClient.get<ListResponseModel<CarDetail>>(path);
   }
 }
