@@ -14,6 +14,10 @@ import { NaviComponent } from './components/navi/navi.component';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { ColorComponent } from './components/color/color.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
+import { VatAddedPipe } from './pipes/vat-added.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
+import { CarFilterComponent } from './components/car-filter/car-filter.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +31,15 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
     RoleComponent,
     NaviComponent,
     CarDetailComponent,
+    VatAddedPipe,
+    FilterPipe,
+    CarFilterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(),

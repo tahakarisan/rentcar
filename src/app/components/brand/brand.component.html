@@ -1,16 +1,12 @@
 
 <ul class="list-group">
-    <li style="cursor: pointer;"
-    (click)="setCurrentBrand(null)"
+    <li style="cursor: pointer;" (click)="setCurrentBrand(null)"
     [routerLink]="['']"
-    [class]="getAllCurrentBrandClass()"
-    >Tüm Markalar
+    [class]="getAllCurrentBrandClass()">
+    
+    Tüm Markalar
     </li>
-    <li style="cursor: pointer;"
-    *ngFor="let brand of brands" 
-    (click)="setCurrentBrand(brand)"
-    [routerLink] = "['/Cars/Brand/',brand.id]"
-    [class]="getCurrentBrandClass(brand)">
+    <li *ngFor="let brand of brands" [value]="brand.id" (click)="setCurrentBrand(brand);setBrandFilterId(brand.id)" [routerLink] = "['/Cars/brand/',brand.id]"[class]="getCurrentBrandClass(brand)" style="cursor: pointer;">
     {{brand.brandName}}
     </li>
 </ul>

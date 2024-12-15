@@ -1,16 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Car } from '../models/car';
 import { ListResponseModel } from '../models/listResponseModel';
 import { CarImage } from '../models/carImage';
 import { Color } from '../models/color';
 import { CarDetail } from '../models/carDetail';
+import { Brand } from '../models/brand';
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
   url= "https://localhost:44398/api/";
+  brandFilter:number;
+  colorFilter:number;
   constructor(private httpClient:HttpClient) {}
   
   getCars():Observable<ListResponseModel<Car>>{
@@ -40,5 +43,16 @@ export class CarService {
   getCarDetailByCarId(carId:number):Observable<ListResponseModel<CarDetail>>{
     let path = this.url+"Cars/GetDetailByCarId?carId="+carId;
     return this.httpClient.get<ListResponseModel<CarDetail>>(path);
+  }
+  filterCar(brandId:number,colorId:number):Observable<ListResponseModel<CarDetail>>{
+    let path = this.url+"Cars/?brandId="+brandId+"&colorId="+colorId;
+    return this.httpClient.get<ListResponseModel<CarDetail>>(path);
+  }
+  setBrandFilter(brand:Brand):number{
+     this.brandFilter==brand.id
+     return this.brandFilter;
+  }
+  setColorFilter(color:Color){
+    this.brandFilter==color.id
   }
 }

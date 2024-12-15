@@ -16,20 +16,25 @@ export class CarComponent implements OnInit {
   cars:Car[]=[];
   colors:Color[]=[];
   carImages:CarImage[]=[];
+  searchText:"";
   url = "https://localhost:44398/Images/";
   constructor(private carService:CarService,private activatedRoute:ActivatedRoute){
   }
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
-      if(params["brandId"]){
+      
+       if(params["brandId"]){
         this.getCarByBrand(params["brandId"])
+        console.log("b")
       }
       else if(params["colorId"]){
         this.getCarByColor(params["colorId"])
+        console.log("c")
       }
       else{
         this.getCars();
         this.getAllImage();
+        console.log("x");
       }
     })
   }
@@ -56,6 +61,12 @@ export class CarComponent implements OnInit {
   getCarImageByCarId(carId:number){
     this.carService.getCarImageByCarId(carId).subscribe(response=>{
       this.carImages=response.data
+    })
+  }
+  filterCar(brandId:number,colorId:number){
+    this.carService.filterCar(brandId,colorId).subscribe(response=>{
+      this.cars=response.data
+      console.log("çalıştı")
     })
   }
 }
